@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col-6 mx-auto">
+    <form (submit)="signIn(form)" #form="ngForm">
+      <div class="mb-2">
+        <input
+          class="form-control mb-2"
+          type="text"
+          placeholder="Insert your email"
+          required
+          ngModel
+          name="email"
+          #email="ngModel"
+        />
+        <span *ngIf="email.invalid">You must insert a valid email</span>
+      </div>
+      <div class="mb-2">
+        <input
+          class="form-control mb-2"
+          type="password"
+          placeholder="Insert your password"
+          required
+          ngModel
+          name="password"
+          #password="ngModel"
+        />
+        <span *ngIf="password.invalid">You must insert a valid password</span>
+      </div>
+      <button [disabled]="form.invalid" class="btn btn-success btn-sm">
+        Sign In
+      </button>
+    </form>
+  </div>
+</div>

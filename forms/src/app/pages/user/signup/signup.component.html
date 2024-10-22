@@ -1,0 +1,75 @@
+<div class="row">
+  <div class="col-6 mx-auto">
+    <form (submit)="signUp()" [formGroup]="form">
+      <div class="mb-2">
+        <input
+          formControlName="firstName"
+          class="form-control"
+          placeholder="First name"
+          type="text"
+        />
+      </div>
+      <div class="mb-2">
+        <input
+          formControlName="lastName"
+          class="form-control"
+          placeholder="Last name"
+          type="text"
+        />
+      </div>
+      <div class="mb-2">
+        <input
+          formControlName="profileImg"
+          class="form-control"
+          type="file"
+          accept="image/*"
+        />
+      </div>
+      <div class="mb-2">
+        <select class="form-select" formControlName="genre">
+          <option selected value="">--select genre--</option>
+          <option *ngFor="let genre of genres" [value]="genre">
+            {{ genre }}
+          </option>
+        </select>
+      </div>
+      <div class="mb-2">
+        <textarea
+          formControlName="description"
+          class="form-control"
+          placeholder="Your biography..."
+          type="text"
+        ></textarea>
+      </div>
+      <div class="mb-2">
+        <input
+          formControlName="username"
+          class="form-control"
+          type="text"
+          placeholder="Choose your username"
+        />
+      </div>
+      <div class="input-group mb-2" formGroupName="authData">
+        <input
+          formControlName="email"
+          class="form-control"
+          placeholder="Your email"
+          type="email"
+        />
+        <input
+          formControlName="password"
+          class="form-control"
+          placeholder="Password"
+          type="password"
+        />
+        <input
+          formControlName="confirmPassword"
+          class="form-control mb-2"
+          placeholder="Confirm password"
+          type="password"
+        />
+      </div>
+      <button class="btn btn-success btn-sm">Sign Up</button>
+    </form>
+  </div>
+</div>

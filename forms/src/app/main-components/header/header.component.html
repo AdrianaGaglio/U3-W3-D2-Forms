@@ -1,0 +1,32 @@
+<div class="container">
+  <header
+    class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom"
+  >
+    <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+      <li>
+        <a
+          routerLink="/"
+          routerLinkActive="link-body-emphasis"
+          class="nav-link px-2 link-secondary"
+          >Home</a
+        >
+      </li>
+      <li>
+        <a
+          routerLink="/user"
+          routerLinkActive="link-body-emphasis"
+          class="nav-link px-2 link-secondary"
+          >Profile</a
+        >
+      </li>
+    </ul>
+    <div class="d-flex gap-1">
+      <button routerLink="/user/signin" class="btn btn-primary btn-sm">
+        Sign In
+      </button>
+      <button routerLink="/user/signup" class="btn btn-success btn-sm">
+        Sign Up
+      </button>
+    </div>
+  </header>
+</div>

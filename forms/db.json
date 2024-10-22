@@ -1,0 +1,46 @@
+{
+  "users": [
+    {
+      "firstName": "adriana",
+      "lastName": "gaglio",
+      "profileImg": "C:\\fakepath\\1728409377040.jpg",
+      "genre": "Female",
+      "description": "asdada",
+      "username": "adriana",
+      "authData": {
+        "email": "a.g@mail.com",
+        "password": "ksdksdk",
+        "confirmPassword": "ksksk"
+      },
+      "id": 1
+    },
+    {
+      "firstName": "prova",
+      "lastName": "prova",
+      "profileImg": "C:\\fakepath\\1728409377040.jpg",
+      "genre": "Female",
+      "description": "asdada",
+      "username": "asdaa",
+      "authData": {
+        "email": "a@mail.com",
+        "password": "ksdkdsk",
+        "confirmPassword": "ksdkdsk"
+      },
+      "id": 2
+    },
+    {
+      "firstName": "kdlkdlk",
+      "lastName": "lkslkaslksakl",
+      "profileImg": "C:\\fakepath\\1728409377040.jpg",
+      "genre": "Female",
+      "description": "dczcxzcz",
+      "username": "zxczczcz",
+      "authData": {
+        "email": "bb@mail.com",
+        "password": "aaaaa",
+        "confirmPassword": "aaaaaa"
+      },
+      "id": 3
+    }
+  ]
+}
