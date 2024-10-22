@@ -8,7 +8,12 @@
           placeholder="First name"
           type="text"
         />
-        <span *ngIf="isInvalid('firstName')">You must insert a valid name</span>
+        <span
+          *ngIf="
+            form.get('firstName')?.invalid && form.get('firstName')?.touched
+          "
+          >{{ (this.form.get("firstName")?.errors)!["message"] }}</span
+        >
       </div>
       <div class="mb-2">
         <input
@@ -17,7 +22,10 @@
           placeholder="Last name"
           type="text"
         />
-        <span *ngIf="isInvalid('lastName')">You must insert a valid name</span>
+        <span
+          *ngIf="form.get('lastName')?.invalid && form.get('lastName')?.touched"
+          >{{ (this.form.get("lastName")?.errors)!["message"] }}</span
+        >
       </div>
       <div class="mb-2">
         <input
@@ -29,12 +37,15 @@
       </div>
       <div class="mb-2">
         <select class="form-select" formControlName="genre">
-          <option selected value="">--select genre--</option>
+          <option value="">--select genre--</option>
           <option *ngFor="let genre of genres" [value]="genre">
             {{ genre }}
           </option>
         </select>
-        <span *ngIf="isInvalidSelect('genre')">You must select a genre</span>
+        <span
+          *ngIf="form.get('genre')?.invalid && form.get('genre')?.touched"
+          >{{ (this.form.get("genre")?.errors)!["message"] }}</span
+        >
       </div>
       <div class="mb-2">
         <textarea
@@ -51,27 +62,56 @@
           type="text"
           placeholder="Choose your username"
         />
+        <span
+          *ngIf="form.get('username')?.invalid && form.get('username')?.touched"
+          >{{ (this.form.get("username")?.errors)!["message"] }}</span
+        >
       </div>
       <div class="input-group mb-2" formGroupName="authData">
-        <input
-          formControlName="email"
-          class="form-control"
-          placeholder="Your email"
-          type="email"
-        />
-
-        <input
-          formControlName="password"
-          class="form-control"
-          placeholder="Password"
-          type="password"
-        />
-        <input
-          formControlName="confirmPassword"
-          class="form-control mb-2"
-          placeholder="Confirm password"
-          type="password"
-        />
+        <div>
+          <input
+            formControlName="email"
+            class="form-control"
+            placeholder="Your email"
+            type="email"
+          />
+          <span
+            *ngIf="
+              form.get('authData.email')?.invalid &&
+              form.get('authData.email')?.touched
+            "
+            class="text-danger"
+            >You must insert a valid email</span
+          >
+        </div>
+        <div>
+          <div class="d-flex align-items-center">
+            <div>
+              <input
+                formControlName="password"
+                class="form-control"
+                placeholder="Password"
+                type="password"
+              />
+              <span
+                *ngIf="
+                  (form.get('authData.confirmPassword')?.errors)!['mismatch']
+                "
+                >{{
+                  (this.form.get("authData.confirmPassword")?.errors)![
+                    "message"
+                  ]
+                }}</span
+              >
+            </div>
+            <input
+              formControlName="confirmPassword"
+              class="form-control"
+              placeholder="Confirm password"
+              type="password"
+            />
+          </div>
+        </div>
       </div>
       <button [disabled]="form.invalid" class="btn btn-success btn-sm">
         Sign Up

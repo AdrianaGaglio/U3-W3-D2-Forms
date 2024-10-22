@@ -17,8 +17,8 @@ export class SigninComponent {
     this.checkData = this.userSvc.login(form.form.value);
     if (this.checkData) {
       form.reset();
-      this.router.navigate(['/']);
-      this.userSvc.isLoggedIn$.next(true);
+      this.router.navigate(['/user']);
+      this.userSvc.isLoggedIn = true;
     } else {
       alert('Wrong email or password');
     }

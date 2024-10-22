@@ -14,7 +14,7 @@ export class UserService {
 
   apiUrl = 'http://localhost:3000/users';
   users: iUser[] = [];
-  isLoggedIn$ = new Subject<boolean>();
+  isLoggedIn: boolean = false;
 
   addUser(user: Partial<iUser>): Observable<iUser> {
     return this.http.post<iUser>(this.apiUrl, user);

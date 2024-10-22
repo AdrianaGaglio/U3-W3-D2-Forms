@@ -29,9 +29,16 @@
           >You must insert a valid password</span
         >
       </div>
-      <button [disabled]="form.invalid" class="btn btn-success btn-sm">
-        Sign In
-      </button>
+      <div class="py-3 d-flex align-items-center justify-content-between">
+        <button [disabled]="form.invalid" class="btn btn-success btn-sm">
+          Sign In
+        </button>
+        <p class="mb-0">
+          <a routerLink="/user/signup" class="text-decoration-none"
+            >Sign Up if you don't have an account</a
+          >
+        </p>
+      </div>
     </form>
   </div>
 </div>
