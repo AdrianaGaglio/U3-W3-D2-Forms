@@ -11,7 +11,9 @@
           name="email"
           #email="ngModel"
         />
-        <span *ngIf="email.invalid">You must insert a valid email</span>
+        <span *ngIf="email.invalid && email.touched"
+          >You must insert a valid email</span
+        >
       </div>
       <div class="mb-2">
         <input
@@ -23,7 +25,9 @@
           name="password"
           #password="ngModel"
         />
-        <span *ngIf="password.invalid">You must insert a valid password</span>
+        <span *ngIf="password.invalid && password.touched"
+          >You must insert a valid password</span
+        >
       </div>
       <button [disabled]="form.invalid" class="btn btn-success btn-sm">
         Sign In

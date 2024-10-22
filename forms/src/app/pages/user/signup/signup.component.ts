@@ -41,6 +41,14 @@ export class SignupComponent implements OnInit {
     });
   }
 
+  isInvalid(field: string) {
+    return this.form.get(field)?.invalid && this.form.get(field)?.touched;
+  }
+
+  isInvalidSelect(field: string) {
+    return this.form.get(field)?.touched && this.form.get(field)?.value === '';
+  }
+
   signUp() {
     if (this.form.valid) {
       this.userSvc.addUser(this.form.value).subscribe();

@@ -8,6 +8,7 @@
           placeholder="First name"
           type="text"
         />
+        <span *ngIf="isInvalid('firstName')">You must insert a valid name</span>
       </div>
       <div class="mb-2">
         <input
@@ -16,6 +17,7 @@
           placeholder="Last name"
           type="text"
         />
+        <span *ngIf="isInvalid('lastName')">You must insert a valid name</span>
       </div>
       <div class="mb-2">
         <input
@@ -32,6 +34,7 @@
             {{ genre }}
           </option>
         </select>
+        <span *ngIf="isInvalidSelect('genre')">You must select a genre</span>
       </div>
       <div class="mb-2">
         <textarea
@@ -56,6 +59,7 @@
           placeholder="Your email"
           type="email"
         />
+
         <input
           formControlName="password"
           class="form-control"
@@ -69,7 +73,9 @@
           type="password"
         />
       </div>
-      <button class="btn btn-success btn-sm">Sign Up</button>
+      <button [disabled]="form.invalid" class="btn btn-success btn-sm">
+        Sign Up
+      </button>
     </form>
   </div>
 </div>
